@@ -236,3 +236,33 @@ em {
   gap: 12px;
 }
 .footer-note { color: var(--gray); font-size: 13.5px; }
+/* ---------------- Publications page ---------------- */
+.pub-hero { padding: 70px 0 50px; border-bottom: 1px solid var(--line); }
+.pub-hero-headline { max-width: none; }
+
+#list-view .tab-row { margin-top: 44px; }
+#list-view.hidden { display: none; }
+
+.article-view { display: none; padding: 70px 0 100px; }
+.article-view.visible { display: block; }
+.back-link {
+  font-size: 14.5px;
+  color: var(--gray);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 3px;
+}
+.back-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+.article-view article { max-width: 720px; margin: 46px auto 0; }
+.article-view h1 { font-size: clamp(30px, 4vw, 44px); margin-top: 12px; }
+.article-byline { margin-top: 18px; font-size: 14.5px; color: var(--gray); }
+.article-body { margin-top: 34px; font-size: 18px; line-height: 1.75; }
+.article-body p { margin-bottom: 22px; color: var(--ink); }
+.article-body p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 56px;
+  float: left;
+  line-height: 0.8;
+  padding: 6px 8px 0 0;
+  color: var(--ink);
+}
