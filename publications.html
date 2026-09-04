@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Finance for Others</title>
+<meta name="description" content="Financial advice for deliberate lives. Economic papers for a longer view.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="index.html" class="wordmark">Finance<span class="dot">.</span></a>
+    <nav class="main-nav">
+      <a href="index.html#mission">The Mission</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="publications.html">Publications</a>
+      <a href="index.html#podcast">Podcast</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
+  </div>
+</header>
+
+<section class="pub-hero">
+  <div class="wrap">
+    <span class="eyebrow">Publications</span>
+    <h1 class="section-headline pub-hero-headline">Ideas worth <em>reading twice.</em></h1>
+    <p class="section-sub">Financial advice for deliberate lives. Economic papers for a longer view. All of it written to be read, not filed.</p>
+  </div>
+</section>
+
+<div id="list-view">
+  <div class="wrap">
+    <div class="tab-row" id="tab-row">
+      <span class="tab active" data-category="All">All</span>
+      <span class="tab" data-category="Learning">Learning</span>
+      <span class="tab" data-category="Markets">Markets</span>
+      <span class="tab" data-category="Careers">Careers</span>
+    </div>
+    <div class="post-list" id="post-list"></div>
+  </div>
+</div>
+
+<div class="article-view" id="article-view">
+  <div class="wrap">
+    <a href="#" class="back-link" id="back-link">← Back to all articles</a>
+    <article id="article-content"></article>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <a href="index.html" class="wordmark">Finance<span class="dot">.</span></a>
+    <p class="footer-note">© 2026 Finance for Others. A nonprofit initiative.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function () {
+    document.querySelector('.main-nav').classList.toggle('open');
+  });
+</script>
+<script src="blog-data.js"></script>
+<script src="publications.js"></script>
+</body>
+</html>
