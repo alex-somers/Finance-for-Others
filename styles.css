@@ -202,7 +202,7 @@ em {
 }
 
 @media (max-width: 860px) {
-  .chart-scroll-track { height: 220vh; }
+  .chart-scroll-track { height: 130vh; }
 }
 
 /* Mission */
