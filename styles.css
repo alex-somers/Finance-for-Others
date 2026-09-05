@@ -163,7 +163,7 @@ em {
 
 /* Scroll-triggered candlestick chart */
 .chart-scroll { position: relative; }
-.chart-scroll-track { height: 280vh; position: relative; }
+.chart-scroll-track { height: 160vh; position: relative; }
 .chart-sticky {
   position: sticky;
   top: 0;
