@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — The Stock Pitch Challenge — Finance for Others</title>
+<meta name="description" content="The Stock Pitch Challenge — a real research budget, an industry mentor, and a stage to pitch live to analysts and portfolio managers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="index.html" class="wordmark">F F O</a>
+    <nav class="main-nav">
+      <a href="index.html#mission">The Mission</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="index.html#podcast">Podcast</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
+  </div>
+</header>
+
+<section class="pub-hero">
+  <div class="wrap">
+    <span class="eyebrow">Events</span>
+    <h1 class="section-headline pub-hero-headline">The Stock Pitch<br>Challenge.</h1>
+    <p class="section-sub">A real research budget. An industry mentor. A stage to defend an idea in front of people who'll actually push back. Built for students who've never had a way into a room like this.</p>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="wrap">
+    <span class="eyebrow">Overview</span>
+    <h2 class="mission-headline">Pick a stock. Build the case.<br>Defend it live.</h2>
+    <p class="mission-sub">Teams research a public company, build a full investment thesis, and pitch it to a panel of working analysts and portfolio managers. It's not a classroom exercise — the questions are the same ones a real pitch would face, and the panel is under no obligation to be gentle about it.</p>
+  </div>
+</section>
+
+<section class="programs" id="format">
+  <div class="wrap">
+    <span class="eyebrow">How it works</span>
+    <h2 class="section-headline">Four stages.</h2>
+
+    <div class="program-list">
+      <div class="program-item">
+        <span class="program-index">01</span>
+        <div>
+          <h3>Form a team</h3>
+          <p>Small teams — no finance background required. Some of the strongest teams we've seen came in with more curiosity than credentials.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <span class="program-index">02</span>
+        <div>
+          <h3>Research &amp; build the thesis</h3>
+          <p>Each team gets a research budget and access to a mentor from the industry to sanity-check their thinking as the thesis develops.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <span class="program-index">03</span>
+        <div>
+          <h3>Pitch live</h3>
+          <p>Teams present their case to a panel of analysts and portfolio managers, then take real questions — the kind meant to find the weak point in an argument, not just to be polite.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <span class="program-index">04</span>
+        <div>
+          <h3>Win funding &amp; placements</h3>
+          <p>Top teams receive prize funding, and are fast-tracked toward internship and job conversations with our partner firms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="podcast" id="who">
+  <div class="wrap">
+    <span class="eyebrow">Who it's for</span>
+    <h2 class="section-headline">You don't need a finance<br>degree to enter.</h2>
+    <p class="section-sub">The Challenge is built for people who've never been handed a way in — students from any major, at any school, with any level of prior exposure to markets. What matters is whether you can build an argument and defend it, not where you learned to do it.</p>
+  </div>
+</section>
+
+<section class="mission" style="border-top: 1px solid var(--line);">
+  <div class="wrap">
+    <span class="eyebrow">Coming Soon</span>
+    <h2 class="mission-headline" style="font-size: clamp(26px, 3.2vw, 36px);">Dates, judges, and registration details will be announced here.</h2>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <a href="index.html" class="wordmark">Finance<span class="dot">.</span></a>
+    <p class="footer-note">© 2026 Finance for Others. A nonprofit initiative.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function () {
+    document.querySelector('.main-nav').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
