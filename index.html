@@ -99,11 +99,113 @@
         <line x1="1167.6" y1="31.4" x2="1167.6" y2="94.5" stroke="var(--candle-up)" stroke-width="2"/>
         <rect x="1154.6" y="42.2" width="26.0" height="32.4" fill="var(--candle-up)"/>
       </svg>
-      <div class="chart-mask" id="chartMask"></div>
+            <div class="chart-mask" id="chartMask"></div>
       <p class="chart-scroll-hint">Keep scrolling</p>
     </div>
   </div>
 </section>
+
+<section class="solve">
+  <div class="wrap solve-top">
+    <div class="solve-illustration" aria-hidden="true">
+      <svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#EAF2FB"/>
+            <stop offset="100%" stop-color="#FAF9F4"/>
+          </linearGradient>
+          <linearGradient id="towerGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#0F2542"/>
+            <stop offset="100%" stop-color="#1B3A6B"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="600" height="700" fill="url(#skyGrad)"/>
+        <circle cx="470" cy="120" r="60" fill="#FFFFFF" opacity="0.55"/>
+        <circle cx="520" cy="90" r="40" fill="#FFFFFF" opacity="0.45"/>
+        <circle cx="150" cy="80" r="46" fill="#FFFFFF" opacity="0.5"/>
+        <polygon points="0,0 260,0 40,260 0,220" fill="#3A5B3E" opacity="0.85"/>
+        <polygon points="0,0 180,0 0,160" fill="#2E4A32" opacity="0.9"/>
+        <polygon points="230,700 210,60 390,60 370,700" fill="url(#towerGrad)"/>
+        <g stroke="rgba(255,255,255,0.18)" stroke-width="2">
+          <line x1="245" y1="700" x2="222" y2="60"/>
+          <line x1="270" y1="700" x2="238" y2="60"/>
+          <line x1="300" y1="700" x2="260" y2="60"/>
+          <line x1="330" y1="700" x2="282" y2="60"/>
+          <line x1="355" y1="700" x2="300" y2="60"/>
+        </g>
+        <g stroke="rgba(255,255,255,0.12)" stroke-width="1.5">
+          <line x1="215" y1="140" x2="385" y2="140"/>
+          <line x1="217" y1="230" x2="383" y2="230"/>
+          <line x1="219" y1="320" x2="381" y2="320"/>
+          <line x1="221" y1="410" x2="379" y2="410"/>
+          <line x1="223" y1="500" x2="377" y2="500"/>
+          <line x1="225" y1="590" x2="375" y2="590"/>
+        </g>
+      </svg>
+    </div>
+    <div class="solve-copy">
+      <h2 class="section-headline solve-headline">What problem can we <em>solve</em> together?</h2>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="solve-cards">
+      <a class="solve-card" href="#programs">
+        <span class="solve-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8L36 15L20 22L4 15L20 8Z" stroke="var(--navy)" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M11 18V27C11 27 14.5 32 20 32C25.5 32 29 27 29 27V18" stroke="var(--navy)" stroke-width="1.6"/>
+          </svg>
+        </span>
+        <h3>Financial Literacy</h3>
+        <p>Free, AI-guided courses that meet you exactly where your knowledge starts — no finance background required.</p>
+        <span class="solve-link">Explore courses <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="solve-card" href="publications.html?category=Markets">
+        <span class="solve-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 30L15 18L22 24L34 9" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M26 9H34V17" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Understand the Markets</h3>
+        <p>Plain-language breakdowns of how indices, exchanges, and monetary policy actually work.</p>
+        <span class="solve-link">Read the research <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="solve-card" href="#podcast">
+        <span class="solve-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="6" width="8" height="16" rx="4" stroke="var(--navy)" stroke-width="1.6"/>
+            <path d="M11 18C11 23 15 26 20 26C25 26 29 23 29 18" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20" y1="26" x2="20" y2="33" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Hear from Financial Leaders</h3>
+        <p>Long-form conversations with investors, economists, and founders on how they learned to think about money.</p>
+        <span class="solve-link">Listen to the podcast <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+
+      <a class="solve-card" href="events.html">
+        <span class="solve-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 8H27V17C27 22 24 26 20 26C16 26 13 22 13 17V8Z" stroke="var(--navy)" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M13 11H8V13C8 16 10 18 13 18" stroke="var(--navy)" stroke-width="1.6"/>
+            <path d="M27 11H32V13C32 16 30 18 27 18" stroke="var(--navy)" stroke-width="1.6"/>
+            <line x1="20" y1="26" x2="20" y2="31" stroke="var(--navy)" stroke-width="1.6"/>
+            <line x1="14" y1="34" x2="26" y2="34" stroke="var(--navy)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Gain Real Experience</h3>
+        <p>A live stock pitch challenge with a real research budget, a mentor, and a path into internships and jobs.</p>
+        <span class="solve-link">See the Challenge <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="mission" id="mission">
 
 <section class="mission" id="mission">
   <div class="wrap">
