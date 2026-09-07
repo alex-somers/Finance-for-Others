@@ -205,6 +205,74 @@ em {
   .chart-scroll-track { height: 130vh; }
 }
 
+/* Solve section */
+.solve { padding: 90px 0 0; border-top: 1px solid var(--line); }
+.solve-top {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 60px;
+}
+.solve-illustration {
+  aspect-ratio: 3 / 3.4;
+  overflow: hidden;
+}
+.solve-illustration svg { width: 100%; height: 100%; display: block; }
+.solve-headline { max-width: 16ch; }
+
+.solve-cards {
+  margin-top: -70px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  padding-bottom: 90px;
+}
+.solve-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 30px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  box-shadow: 0 18px 40px rgba(23,23,26,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.solve-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 46px rgba(23,23,26,0.1);
+}
+.solve-icon { display: block; margin-bottom: 18px; }
+.solve-icon svg { width: 34px; height: 34px; }
+.solve-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.solve-card p {
+  font-size: 14.5px;
+  color: var(--gray);
+  flex-grow: 1;
+}
+.solve-link {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+@media (max-width: 980px) {
+  .solve-top { grid-template-columns: 1fr; }
+  .solve-illustration { aspect-ratio: 16/9; }
+  .solve-cards { grid-template-columns: repeat(2, 1fr); margin-top: 40px; }
+}
+@media (max-width: 560px) {
+  .solve-cards { grid-template-columns: 1fr; }
+}
 /* Mission */
 .mission { padding: 90px 0; border-top: 1px solid var(--line); }
 .mission-headline { font-size: clamp(32px, 4.4vw, 52px); max-width: 20ch; }
