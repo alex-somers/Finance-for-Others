@@ -217,7 +217,7 @@ em {
   aspect-ratio: 3 / 3.4;
   overflow: hidden;
 }
-.solve-illustration svg { width: 100%; height: 100%; display: block; }
+.solve-illustration img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .solve-headline { max-width: 16ch; }
 
 .solve-cards {
