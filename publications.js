@@ -6,7 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const articleContent = document.getElementById('article-content');
   const backLink = document.getElementById('back-link');
 
-  let activeCategory = 'All';
+    let activeCategory = 'All';
+
+  // Pre-select a category if the link included ?category=Markets, etc.
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get('category');
+  if (requested && ['Learning', 'Markets', 'Careers'].includes(requested)) {
+    activeCategory = requested;
+    tabRow.querySelectorAll('.tab').forEach(t => {
+      t.classList.toggle('active', t.dataset.category === requested);
+    });
+  }
 
   function renderList() {
     const posts = activeCategory === 'All'
