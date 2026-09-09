@@ -305,6 +305,7 @@ em {
 @media (max-width: 600px) {
   .program-item { grid-template-columns: 40px 1fr; }
 }
+
 /* Quiz carousel (Courses section) */
 .quiz-carousel { position: relative; margin-top: 50px; }
 .quiz-carousel-viewport { overflow: hidden; }
@@ -463,8 +464,6 @@ em {
 .quiz-review-options li.correct-answer { border-color: var(--candle-up); color: var(--ink); font-weight: 500; }
 .quiz-review-options li.wrong-answer { border-color: var(--candle-down); color: var(--ink); }
 .quiz-review-explanation { margin-top: 14px; font-size: 14.5px; color: var(--gray); }
-
-/* Insights */
 
 /* Insights */
 .insights { padding: 90px 0; border-top: 1px solid var(--line); }
