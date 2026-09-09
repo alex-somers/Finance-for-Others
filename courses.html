@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — Finance for Others</title>
+<meta name="description" content="Free quizzes on personal finance, economics, investing, and energy markets — test your knowledge and see where you stand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="index.html" class="wordmark">F F O</a>
+    <nav class="main-nav">
+      <a href="index.html#mission">The Mission</a>
+      <a href="index.html#programs">Courses</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="index.html#podcast">Podcast</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">Menu</button>
+  </div>
+</header>
+
+<section class="pub-hero">
+  <div id="quizApp">
+    <!-- rendered by quiz.js -->
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <a href="index.html" class="wordmark">Finance<span class="dot">.</span></a>
+    <p class="footer-note">© 2026 Finance for Others. A nonprofit initiative.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function () {
+    document.querySelector('.main-nav').classList.toggle('open');
+  });
+</script>
+<script src="quiz-data.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>
