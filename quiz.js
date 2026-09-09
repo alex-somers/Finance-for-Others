@@ -1,0 +1,116 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const app = document.getElementById('quizApp');
+  const params = new URLSearchParams(window.location.search);
+  const quizKey = params.get('quiz');
+
+  if (quizKey && QUIZZES[quizKey]) {
+    renderQuiz(quizKey);
+  } else {
+    renderSelection();
+  }
+
+  function renderSelection() {
+    const keys = Object.keys(QUIZZES);
+    app.innerHTML = `
+      <div class="wrap quiz-select-wrap">
+        <span class="eyebrow">Courses</span>
+        <h1 class="section-headline">Choose a quiz to start.</h1>
+        <div class="quiz-select-grid">
+          ${keys.map(k => `
+            <a class="quiz-select-card" href="?quiz=${k}">
+              <span class="quiz-select-tag">${QUIZZES[k].tag}</span>
+              <h3>${QUIZZES[k].label}</h3>
+              <p>${QUIZZES[k].description}</p>
+              <span class="solve-link">Take quiz <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderQuiz(key) {
+    const quiz = QUIZZES[key];
+    app.innerHTML = `
+      <div class="wrap quiz-take-wrap">
+        <span class="eyebrow">${quiz.tag}</span>
+        <h1 class="section-headline">${quiz.label} Quiz</h1>
+        <p class="section-sub">${quiz.questions.length} questions. Answer every question, then see your score with a full explanation for each one.</p>
+        <form id="quizForm" class="quiz-form">
+          ${quiz.questions.map((item, qi) => `
+            <fieldset class="quiz-question" data-qindex="${qi}">
+              <legend>${qi + 1}. ${item.q}</legend>
+              <div class="quiz-options">
+                ${item.options.map((opt, oi) => `
+                  <label class="quiz-option">
+                    <input type="radio" name="q${qi}" value="${oi}" required>
+                    <span>${opt}</span>
+                  </label>
+                `).join('')}
+              </div>
+            </fieldset>
+          `).join('')}
+          <button type="submit" class="btn btn-dark quiz-submit">See my results</button>
+        </form>
+        <div id="quizResults" class="quiz-results hidden"></div>
+      </div>
+    `;
+
+    const form = document.getElementById('quizForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const answers = quiz.questions.map((_, qi) => {
+        const picked = form.querySelector(`input[name="q${qi}"]:checked`);
+        return picked ? parseInt(picked.value, 10) : null;
+      });
+      showResults(quiz, answers);
+    });
+  }
+
+  function showResults(quiz, answers) {
+    const total = quiz.questions.length;
+    let score = 0;
+    answers.forEach((a, i) => { if (a === quiz.questions[i].correctIndex) score++; });
+    const percentile = PERCENTILES[score] ?? Math.round((score / total) * 99);
+
+    document.getElementById('quizForm').classList.add('hidden');
+    const resultsEl = document.getElementById('quizResults');
+    resultsEl.classList.remove('hidden');
+
+    resultsEl.innerHTML = `
+      <div class="quiz-score-card">
+        <span class="eyebrow">Your results</span>
+        <h2 class="section-headline">${score} out of ${total} correct</h2>
+        <p class="quiz-percentile">Estimated better than <strong>${percentile}%</strong> of US adults<sup>*</sup></p>
+        <p class="quiz-percentile-note">*Illustrative estimate based on general financial literacy research patterns — not a formally normed test score.</p>
+        <div class="quiz-results-actions">
+          <a href="?quiz=${Object.keys(QUIZZES).find(k => QUIZZES[k] === quiz)}" class="btn btn-ghost">Retake this quiz</a>
+          <a href="courses.html" class="btn btn-ghost">Choose another quiz</a>
+        </div>
+      </div>
+
+      <div class="quiz-breakdown">
+        ${quiz.questions.map((item, qi) => {
+          const userAnswer = answers[qi];
+          const isCorrect = userAnswer === item.correctIndex;
+          return `
+            <div class="quiz-review ${isCorrect ? 'is-correct' : 'is-incorrect'}">
+              <p class="quiz-review-q">${qi + 1}. ${item.q}</p>
+              <ul class="quiz-review-options">
+                ${item.options.map((opt, oi) => {
+                  let cls = '';
+                  if (oi === item.correctIndex) cls = 'correct-answer';
+                  else if (oi === userAnswer) cls = 'wrong-answer';
+                  return `<li class="${cls}">${opt}${oi === item.correctIndex ? ' — Correct answer' : ''}${oi === userAnswer && !isCorrect ? ' — Your answer' : ''}</li>`;
+                }).join('')}
+              </ul>
+              <p class="quiz-review-explanation">${item.explanation}</p>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
