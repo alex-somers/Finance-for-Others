@@ -402,6 +402,46 @@
     window.addEventListener('resize', update);
     update();
   })();
+
+  // Quiz card carousel
+  (function () {
+    var track = document.getElementById('quizTrack');
+    var prevBtn = document.getElementById('quizPrev');
+    var nextBtn = document.getElementById('quizNext');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    var cards = Array.prototype.slice.call(track.children);
+    var index = 0;
+
+    function cardsPerView() {
+      return window.innerWidth <= 640 ? 1 : (window.innerWidth <= 980 ? 2 : 3);
+    }
+
+    function maxIndex() {
+      return Math.max(cards.length - cardsPerView(), 0);
+    }
+
+    function update() {
+      index = Math.min(index, maxIndex());
+      var card = cards[0];
+      var gap = parseFloat(getComputedStyle(track).gap) || 0;
+      var step = card.getBoundingClientRect().width + gap;
+      track.style.transform = 'translateX(' + (-index * step) + 'px)';
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index >= maxIndex();
+    }
+
+    prevBtn.addEventListener('click', function () {
+      index = Math.max(index - 1, 0);
+      update();
+    });
+    nextBtn.addEventListener('click', function () {
+      index = Math.min(index + 1, maxIndex());
+      update();
+    });
+    window.addEventListener('resize', update);
+    update();
+  })();
 </script>
 </body>
 </html>
