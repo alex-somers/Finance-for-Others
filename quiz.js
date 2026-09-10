@@ -93,15 +93,34 @@ document.addEventListener('DOMContentLoaded', () => {
         ${quiz.questions.map((item, qi) => {
           const userAnswer = answers[qi];
           const isCorrect = userAnswer === item.correctIndex;
+          const statusIcon = isCorrect
+            ? `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg>`
+            : `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>`;
           return `
             <div class="quiz-review ${isCorrect ? 'is-correct' : 'is-incorrect'}">
-              <p class="quiz-review-q">${qi + 1}. ${item.q}</p>
+              <div class="quiz-review-heading">
+                <span class="quiz-review-status" aria-label="${isCorrect ? 'Correct' : 'Incorrect'}">${statusIcon}</span>
+                <div>
+                  <p class="quiz-review-label">${isCorrect ? 'Correct' : 'Not quite'}</p>
+                  <p class="quiz-review-q">${qi + 1}. ${item.q}</p>
+                </div>
+              </div>
               <ul class="quiz-review-options">
                 ${item.options.map((opt, oi) => {
                   let cls = '';
                   if (oi === item.correctIndex) cls = 'correct-answer';
                   else if (oi === userAnswer) cls = 'wrong-answer';
-                  return `<li class="${cls}">${opt}${oi === item.correctIndex ? ' — Correct answer' : ''}${oi === userAnswer && !isCorrect ? ' — Your answer' : ''}</li>`;
+                  const optionIcon = oi === item.correctIndex
+                    ? `<span class="quiz-option-icon option-icon-correct" aria-label="Correct answer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></span>`
+                    : oi === userAnswer
+                      ? `<span class="quiz-option-icon option-icon-wrong" aria-label="Your incorrect answer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg></span>`
+                      : '';
+                  const label = oi === item.correctIndex
+                    ? '<span class="quiz-answer-label">Correct answer</span>'
+                    : oi === userAnswer
+                      ? '<span class="quiz-answer-label">Your answer</span>'
+                      : '';
+                  return `<li class="${cls}">${optionIcon}<span>${opt}</span>${label}</li>`;
                 }).join('')}
               </ul>
               <p class="quiz-review-explanation">${item.explanation}</p>

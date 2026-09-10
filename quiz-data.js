@@ -31,7 +31,7 @@ const QUIZZES = {
         q: "What is an emergency fund typically meant to cover?",
         options: ["3–6 months of essential living expenses", "A down payment on a house", "Retirement savings", "Stock market investments"],
         correctIndex: 0,
-        explanation: "An emergency fund is a cash cushion for unexpected expenses or income loss — a separate goal from a house down payment, retirement, or investing."
+        explanation: "An emergency fund is a cash cushion for unexpected expenses or income loss — a separate goal from a house down payment, retirement, or investing. A common target is 3–6 months of essential expenses, kept somewhere stable and easy to access rather than in investments that could drop in value when you need the money."
       },
       {
         q: "What happens to your credit score if you miss a loan payment?",
@@ -85,7 +85,7 @@ const QUIZZES = {
         q: "What is the main advantage of a Roth IRA over a traditional IRA?",
         options: ["Withdrawals in retirement are generally tax-free", "Contributions are never taxed at all, ever", "There's no limit to how much you can contribute", "It guarantees a fixed return"],
         correctIndex: 0,
-        explanation: "Roth IRAs are funded with after-tax money, so qualified withdrawals are tax-free. Contributions are still taxed going in, contribution limits still apply, and no return is guaranteed."
+        explanation: "Roth IRAs are funded with after-tax money, so qualified withdrawals are generally tax-free. That can be especially useful if you expect your tax rate to be higher in retirement. Contributions are still taxed going in, annual contribution limits and eligibility rules apply, and no investment return is guaranteed."
       },
       {
         q: "What does it mean to \"live below your means\"?",
@@ -153,7 +153,7 @@ const QUIZZES = {
         q: "A recession is commonly defined as:",
         options: ["A significant decline in economic activity, often two consecutive quarters of falling GDP", "Any single day the stock market falls", "A period of very low unemployment", "A rise in interest rates"],
         correctIndex: 0,
-        explanation: "A recession is about sustained, broad economic contraction — not a single bad market day, low unemployment, or a rate hike itself."
+        explanation: "A recession is a sustained, broad decline in economic activity, usually visible in measures such as output, employment, income, and consumer spending. Two consecutive quarters of falling GDP is a useful shorthand, but it is not the only factor economists use. A single bad market day, low unemployment, or a rate hike alone does not make a recession."
       },
       {
         q: "What is the law of supply and demand?",
@@ -219,7 +219,7 @@ const QUIZZES = {
         q: "What is the purpose of raising interest rates during high inflation?",
         options: ["To slow borrowing and spending, cooling demand and price growth", "To make borrowing cheaper and encourage more spending", "To directly set the prices of goods", "To immediately eliminate unemployment"],
         correctIndex: 0,
-        explanation: "Higher rates typically discourage borrowing and spending to cool inflation. They don't directly set prices, immediately fix unemployment, or make borrowing cheaper."
+        explanation: "Higher rates make loans and credit more expensive, which tends to reduce borrowing and spending and cool demand-driven price growth over time. The effect is indirect and can take months to show up. Central banks do not directly set the price of most goods, and rate hikes can also slow hiring, so they do not immediately eliminate unemployment."
       },
       {
         q: "What is a business cycle?",
@@ -323,7 +323,7 @@ const QUIZZES = {
         q: "What is dollar-cost averaging?",
         options: ["Investing a fixed amount at regular intervals regardless of price", "Buying only when prices are at their lowest point", "Selling all investments at once", "A tax filing method for investment income"],
         correctIndex: 0,
-        explanation: "Dollar-cost averaging spreads purchases over time to reduce the impact of timing — it doesn't require perfect timing, one-time selling, or relate to tax filing."
+        explanation: "Dollar-cost averaging means investing the same dollar amount on a regular schedule, so you buy more shares when prices are lower and fewer when they are higher. It can make investing easier to stick with and reduces the pressure to guess the best entry point, but it does not guarantee a profit or always outperform investing a lump sum immediately."
       },
       {
         q: "What does \"liquidity\" mean for an investment?",
@@ -335,7 +335,7 @@ const QUIZZES = {
         q: "What is the general relationship between risk and potential return?",
         options: ["Higher potential returns are generally associated with higher risk", "Higher risk always guarantees higher returns", "Risk and return are unrelated", "Lower risk always produces higher returns"],
         correctIndex: 0,
-        explanation: "Risk and return tend to move together on average, but higher risk never guarantees a higher return — it just usually comes with the possibility of one."
+        explanation: "Risk and potential return tend to move together: investors usually require the possibility of a higher return to accept more uncertainty. But that is a trade-off, not a promise — a riskier investment can lose money or underperform a safer one. Time horizon, diversification, and your ability to withstand losses all matter when deciding how much risk to take."
       },
       {
         q: "What is a 401(k) match from an employer?",
@@ -421,7 +421,7 @@ const QUIZZES = {
         q: "What is a futures contract in energy trading?",
         options: ["An agreement to buy or sell a commodity at a set price on a future date", "A loan given to an energy company", "A government grant for renewable projects", "A type of insurance policy"],
         correctIndex: 0,
-        explanation: "Futures contracts lock in a price for a future transaction — they aren't loans, grants, or insurance."
+        explanation: "Futures contracts set a price today for buying or selling a commodity at a future date. Producers and users can use them to reduce uncertainty about future prices; traders may also use them to speculate. They are standardized agreements, not loans, grants, or insurance, and their value can move sharply as market expectations change."
       },
       {
         q: "Why do energy prices tend to be volatile?",
@@ -451,7 +451,7 @@ const QUIZZES = {
         q: "What is a hedge in the context of energy trading?",
         options: ["A financial position taken to offset potential losses from price changes", "A type of physical fence around an energy facility", "A government energy tax", "A type of renewable energy source"],
         correctIndex: 0,
-        explanation: "A hedge is a risk-management financial strategy, not a literal fence, a tax, or an energy source."
+        explanation: "A hedge is a risk-management strategy that offsets exposure to an unwanted price move. For example, an airline may use fuel contracts to make future fuel costs more predictable. A hedge can reduce uncertainty, but it may also limit gains if prices move in the company's favor; it is not a literal fence, a tax, or an energy source."
       },
       {
         q: "Why might an airline use fuel hedging?",
