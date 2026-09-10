@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderQuiz(key) {
-    const quiz = QUIZZES[key];
+    const quiz = { ...QUIZZES[key], questions: shuffleQuizQuestions(QUIZZES[key].questions) };
     app.innerHTML = `
       <div class="wrap quiz-take-wrap">
         <span class="eyebrow">${quiz.tag}</span>
@@ -65,6 +65,29 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       showResults(quiz, answers);
     });
+  }
+
+  function shuffleQuizQuestions(questions) {
+    const shuffledQuestions = questions.map((item) => {
+      const options = shuffle([...item.options]);
+      const correctAnswer = item.options[item.correctIndex];
+
+      return {
+        ...item,
+        options,
+        correctIndex: options.indexOf(correctAnswer)
+      };
+    });
+
+    return shuffle(shuffledQuestions);
+  }
+
+  function shuffle(items) {
+    for (let index = items.length - 1; index > 0; index--) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [items[index], items[randomIndex]] = [items[randomIndex], items[index]];
+    }
+    return items;
   }
 
   function showResults(quiz, answers) {
