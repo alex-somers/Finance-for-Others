@@ -44,6 +44,7 @@ em {
   color: var(--navy);
 }
 
+/* Eyebrow label */
 .eyebrow {
   display: block;
   font-family: var(--font-sans);
@@ -55,6 +56,7 @@ em {
   margin-bottom: 22px;
 }
 
+/* Buttons */
 .btn {
   display: inline-block;
   font-family: var(--font-sans);
@@ -81,8 +83,8 @@ em {
   justify-content: space-between;
 }
 .wordmark {
-  font-family: var(--font-display);
-  font-size: 24px;
+  font-family: var(--font-script);
+  font-size: 34px;
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: 0.02em;
@@ -125,12 +127,6 @@ em {
   font-size: clamp(36px, 6vw, 68px);
   color: var(--ink);
 }
-.hero-static, .hero-dynamic { display: block; }
-.hero-dynamic { white-space: nowrap; margin-top: 6px; }
-
-@media (max-width: 480px) {
-  .hero-line { font-size: clamp(26px, 8.5vw, 68px); }
-}
 .typed-word {
   color: var(--navy);
   font-style: italic;
@@ -163,7 +159,7 @@ em {
 
 /* Scroll-triggered candlestick chart */
 .chart-scroll { position: relative; }
-.chart-scroll-track { height: 160vh; position: relative; }
+.chart-scroll-track { height: 280vh; position: relative; }
 .chart-sticky {
   position: sticky;
   top: 0;
@@ -202,7 +198,7 @@ em {
 }
 
 @media (max-width: 860px) {
-  .chart-scroll-track { height: 130vh; }
+  .chart-scroll-track { height: 220vh; }
 }
 
 /* Solve section */
@@ -217,7 +213,7 @@ em {
   aspect-ratio: 3 / 3.4;
   overflow: hidden;
 }
-.solve-illustration img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.solve-illustration svg { width: 100%; height: 100%; display: block; }
 .solve-headline { max-width: 16ch; }
 
 .solve-cards {
@@ -273,6 +269,7 @@ em {
 @media (max-width: 560px) {
   .solve-cards { grid-template-columns: 1fr; }
 }
+
 /* Mission */
 .mission { padding: 90px 0; border-top: 1px solid var(--line); }
 .mission-headline { font-size: clamp(32px, 4.4vw, 52px); max-width: 20ch; }
@@ -324,13 +321,9 @@ em {
 }
 .quiz-card-image {
   aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-.quiz-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
 }
 .quiz-card-image--pf { background: linear-gradient(150deg, #1B3A6B, #0F2542); }
 .quiz-card-image--econ { background: linear-gradient(150deg, #2E4A32, #17281A); }
