@@ -324,9 +324,13 @@ em {
 }
 .quiz-card-image {
   aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: flex-end;
-  padding: 16px;
+  overflow: hidden;
+}
+.quiz-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .quiz-card-image--pf { background: linear-gradient(150deg, #1B3A6B, #0F2542); }
 .quiz-card-image--econ { background: linear-gradient(150deg, #2E4A32, #17281A); }
